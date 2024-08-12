@@ -1,79 +1,106 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-body{
-    background-color: rgb(115, 139, 139);
+
+body {
+  background-color: rgb(115, 139, 139);
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-inline: 2rem;
-    background-color: rgb(233, 208, 126);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 2rem;
+  background-color: rgb(233, 208, 126);
 }
 
 .logo {
-    font-weight: 800;
+  font-weight: 500;
 }
 
 .list ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+
+.list ul li {
+  font-size: 20px;
+  padding: 5px;
+  text-decoration: none;
+  font-weight: 800;
+  color: crimson;
+}
+
+.link {
+  display: flex;
+  gap: 10px;
+  font-size: 25px;
+  color: green;
+}
+
+.link .cross {
+  visibility: hidden;
+}
+
+
+
+
+@media (max-width: 768px) {
+  header {
+    position: relative;
+  }
+  .link .cross1 {
+    display: block;
+  }
+
+  .list {
     display: flex;
-    gap: 10px;
+    justify-content: center !important;
+    position: absolute;
+    top:40px;
+    left:100%;
+    width: 100%;
+    display: none;
+    background-color: blue;
+    color: white;
+    transition: 2s ease-in-out;
+  }
 
-    list-style: none;
-    border: 2px solid red;
-}
-
-.list ul li   {
-    font-size: 20px;
-    padding: 5px;
-    text-decoration: none;
-    font-weight: 800;
-    color: crimson;
-}
-
-.link
-{
+  .list.active {
     display: flex;
-    gap: 10px;
-    font-size: 25px;
-    color: green;
+    left: 0;
+    transition: 1s ease-in-out;
+  }
+
+  .menu.active{
+    visibility: visible !important;
+  }
+
+  .media {
+    display: none !important;
+  }
+
+  .link .cross {
+    /* display: none !important; */
+    color: red;
+  }
+
+  .cross.active{
+    visibility: visible !important;
+  }
+
+  .list ul {
+    margin-top: 20px;
+    max-width: 100%;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-@media (max-width:425px){
-    header {
-        border: 3px solid red;
-        position: relative;
-    }
-    .list {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 100%;
-        display: none;
-    }
-    .list.active {
-        
-        display: flex;
-    }
 
-    .media {
-        display:   none !important;
-    }
-    .cross {
-        display: none !important;
-    }
-    
-
-    .list ul  {
-        margin-top: 20px;
-        max-width: 100%;
-        flex-direction: column !important;
-        justify-content: center;
-        align-items: center;
-    }
-}
+/* umar  */
